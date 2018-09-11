@@ -3,6 +3,8 @@ import types from "./types";
 
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import FilesystemStorage from 'redux-persist-filesystem-storage';
+
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 
@@ -69,7 +71,7 @@ const githubReducer = ( state = githubReducerInitialState, action ) => {
 
 const persistConfig = {
     key: 'duck',
-    storage: storage,
+    storage: FilesystemStorage,
     stateReconciler: autoMergeLevel2,
     blacklist: ['quacking']
 };
