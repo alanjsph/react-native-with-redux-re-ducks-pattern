@@ -12,10 +12,11 @@ import axiosMiddleware from 'redux-axios-middleware';
 // Redux persist
 import { persistStore } from 'redux-persist';
 
+import initialState from './storeInitialState'
+
 const rootReducer = combineReducers( reducers );
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const initialState = {duck: {github: { repos: [], repoInfo: {}, user: {} } } }
 const store = createStore(
                 rootReducer,
                 initialState,
